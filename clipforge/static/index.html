@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClipForge</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo">◆</span> ClipForge</div>
+    <nav>
+      <a href="#/" data-nav="library">Library</a>
+      <a href="#/queue" data-nav="queue">Posting queue</a>
+      <a href="#/accounts" data-nav="accounts">Accounts</a>
+    </nav>
+  </header>
+  <div id="toast" class="toast" hidden></div>
+  <main id="view"></main>
+
+  <template id="tpl-library">
+    <section class="card new">
+      <h2>New project</h2>
+      <div id="drop" class="drop">
+        <input id="file" type="file" accept="video/*" hidden>
+        <p><strong>Drop a long video here</strong> or <button class="link" id="pick">browse</button></p>
+        <p class="muted">Podcasts, streams, interviews, vlogs. MP4 / MOV / MKV / WEBM.</p>
+        <div id="upbar" class="bar" hidden><span></span></div>
+      </div>
+      <form id="urlform" class="row">
+        <input id="url" type="url" placeholder="…or paste a YouTube / video URL you have rights to">
+        <button class="btn">Import</button>
+      </form>
+      <details class="opts">
+        <summary>Clip settings</summary>
+        <div class="grid4">
+          <label>Min length (s)<input id="o-min" type="number" min="3" max="180"></label>
+          <label>Target length (s)<input id="o-target" type="number" min="5" max="180"></label>
+          <label>Max length (s)<input id="o-max" type="number" min="5" max="180"></label>
+          <label>Max clips (0 = as many as possible)<input id="o-count" type="number" min="0" max="200"></label>
+          <label>Framing
+            <select id="o-layout">
+              <option value="auto">Auto (track speaker)</option>
+              <option value="crop">Centre crop</option>
+              <option value="fit">Fit + blurred background</option>
+              <option value="fill">Fill</option>
+            </select>
+          </label>
+          <label class="chk"><input id="o-captions" type="checkbox" checked> Burn in captions</label>
+          <label class="chk"><input id="o-hook" type="checkbox" checked> Hook title (first 3 s)</label>
+          <label class="chk"><input id="o-ai" type="checkbox" checked> Use Claude to pick clips</label>
+        </div>
+      </details>
+      <div id="caps" class="caps"></div>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <div id="videos" class="videos"></div>
+    </section>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
