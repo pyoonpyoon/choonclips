@@ -1,6 +1,6 @@
 # ClipForge
 
-**A local clipping studio for short-form video.** Drop in a long video (podcast, stream, interview, vlog) or paste a YouTube link. ClipForge finds the moments most likely to work as shorts, cuts them to 15–45 s vertical clips with speaker-tracked framing and animated captions, writes a title, hook and caption for each platform, and posts them to **TikTok, Instagram Reels, YouTube Shorts and X**, either right away or on a schedule.
+**A local clipping studio for short-form video.** Drop in a long video (podcast, stream, interview, vlog) or paste a YouTube link. ClipForge finds the moments most likely to work as shorts, cuts them to 15–20 s vertical clips (adjustable) with speaker-tracked framing and animated captions, writes a title, hook and caption for each platform, and posts them to **TikTok, Instagram Reels, YouTube Shorts and X**, either right away or on a schedule.
 
 Everything runs on your machine. Your videos never leave it except when you post them.
 

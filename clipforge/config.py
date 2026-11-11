@@ -35,8 +35,8 @@ class Settings:
 
     # Clip shape
     min_clip_seconds: int = field(default_factory=lambda: _int("CLIP_MIN_SECONDS", 15))
-    max_clip_seconds: int = field(default_factory=lambda: _int("CLIP_MAX_SECONDS", 45))
-    target_clip_seconds: int = field(default_factory=lambda: _int("CLIP_TARGET_SECONDS", 20))
+    max_clip_seconds: int = field(default_factory=lambda: _int("CLIP_MAX_SECONDS", 20))
+    target_clip_seconds: int = field(default_factory=lambda: _int("CLIP_TARGET_SECONDS", 18))
     # 0 = as many good clips as the video supports
     max_clips: int = field(default_factory=lambda: _int("CLIP_MAX_COUNT", 0))
     burn_captions: bool = field(default_factory=lambda: _env("BURN_CAPTIONS", "1") != "0")
