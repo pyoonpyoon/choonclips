@@ -265,7 +265,7 @@ async function openPostDialog(clipIds) {
         <label>First post at<input id="pd-at" type="datetime-local" value="${iso}"></label>
         <label>Then one clip every (minutes)<input id="pd-int" type="number" min="0" value="${clipIds.length > 1 ? 240 : 0}"></label>
       </div>
-      <p class="muted" style="margin:0">Captions come from each clip's per-platform text. ClipForge must be running at the scheduled time.</p>
+      <p class="muted" style="margin:0">Captions come from each clip's per-platform text. ChoonClips must be running at the scheduled time.</p>
       <div class="toolbar" style="justify-content:flex-end">
         <button class="btn ghost" id="pd-cancel">Cancel</button>
         <button class="btn" id="pd-go" ${connected.length ? "" : "disabled"}>Confirm</button>

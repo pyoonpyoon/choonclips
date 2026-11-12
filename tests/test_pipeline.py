@@ -1,10 +1,10 @@
 import numpy as np
 
-from clipforge.pipeline import candidates as C
-from clipforge.pipeline import scoring
-from clipforge.pipeline.captions import build_ass
-from clipforge.pipeline.reframe import crop_x_expr, plan_crop
-from clipforge.pipeline.transcribe import Segment, Word
+from choonclips.pipeline import candidates as C
+from choonclips.pipeline import scoring
+from choonclips.pipeline.captions import build_ass
+from choonclips.pipeline.reframe import crop_x_expr, plan_crop
+from choonclips.pipeline.transcribe import Segment, Word
 
 
 def make_segments(sentences, t=0.0, gap=0.4):

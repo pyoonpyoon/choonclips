@@ -5,16 +5,16 @@ import pytest
 
 @pytest.fixture()
 def client(tmp_path, monkeypatch):
-    monkeypatch.setenv("CLIPFORGE_DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("CHOONCLIPS_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("YOUTUBE_CLIENT_ID", "cid")
     monkeypatch.setenv("YOUTUBE_CLIENT_SECRET", "sec")
-    from clipforge import config, db
+    from choonclips import config, db
 
     importlib.reload(config)
     monkeypatch.setattr(db, "settings", config.settings)
     db.reset_for_tests()
-    from clipforge import app as appmod
-    from clipforge.publishers import youtube
+    from choonclips import app as appmod
+    from choonclips.publishers import youtube
 
     monkeypatch.setattr(appmod, "settings", config.settings)
     monkeypatch.setattr(youtube, "settings", config.settings)
