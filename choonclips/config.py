@@ -26,12 +26,12 @@ def _int(name: str, default: int) -> int:
 
 @dataclass
 class Settings:
-    data_dir: Path = field(default_factory=lambda: Path(_env("CLIPFORGE_DATA_DIR", "data")).resolve())
-    host: str = field(default_factory=lambda: _env("CLIPFORGE_HOST", "127.0.0.1"))
-    port: int = field(default_factory=lambda: _int("CLIPFORGE_PORT", 8000))
+    data_dir: Path = field(default_factory=lambda: Path(_env("CHOONCLIPS_DATA_DIR", "data")).resolve())
+    host: str = field(default_factory=lambda: _env("CHOONCLIPS_HOST", "127.0.0.1"))
+    port: int = field(default_factory=lambda: _int("CHOONCLIPS_PORT", 8000))
     # The URL your browser uses for this app. OAuth redirect URIs are built from it:
     #   {base_url}/oauth/{platform}/callback
-    base_url: str = field(default_factory=lambda: _env("CLIPFORGE_BASE_URL", "http://localhost:8000").rstrip("/"))
+    base_url: str = field(default_factory=lambda: _env("CHOONCLIPS_BASE_URL", "http://localhost:8000").rstrip("/"))
 
     # Clip shape
     min_clip_seconds: int = field(default_factory=lambda: _int("CLIP_MIN_SECONDS", 15))
@@ -78,7 +78,7 @@ class Settings:
 
     @property
     def db_path(self) -> Path:
-        return self.data_dir / "clipforge.db"
+        return self.data_dir / "choonclips.db"
 
     def ensure_dirs(self) -> None:
         for d in (self.data_dir, self.uploads_dir, self.work_dir, self.clips_dir):

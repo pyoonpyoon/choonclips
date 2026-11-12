@@ -1,6 +1,6 @@
 """Background work: the video -> clips pipeline, and the posting scheduler.
 
-Runs in daemon threads inside the web server process, so `clipforge` is a single command.
+Runs in daemon threads inside the web server process, so `choonclips` is a single command.
 """
 from __future__ import annotations
 

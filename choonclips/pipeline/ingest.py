@@ -15,7 +15,7 @@ def download_url(url: str, video_id: str, on_progress: Callable[[float, str], No
     try:
         import yt_dlp  # type: ignore
     except ImportError as e:  # pragma: no cover
-        raise RuntimeError("URL import needs yt-dlp: pip install 'clipforge[url]'") from e
+        raise RuntimeError("URL import needs yt-dlp: pip install 'choonclips[url]'") from e
 
     out_dir = settings.uploads_dir / video_id
     out_dir.mkdir(parents=True, exist_ok=True)

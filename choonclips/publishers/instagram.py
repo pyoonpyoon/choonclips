@@ -3,7 +3,7 @@
 Needs an Instagram professional (Business or Creator) account.
 Upload modes:
   * resumable (default): the file is pushed straight from your machine, no public URL needed.
-  * url: Instagram downloads the clip from CLIPFORGE_PUBLIC_URL (e.g. a cloudflared/ngrok tunnel to
+  * url: Instagram downloads the clip from CHOONCLIPS_PUBLIC_URL (e.g. a cloudflared/ngrok tunnel to
     this app). Set INSTAGRAM_UPLOAD_MODE=url to use it.
 """
 from __future__ import annotations
@@ -76,9 +76,9 @@ class Instagram(Publisher):
         params: dict[str, Any] = {"media_type": "REELS", "caption": caption[:2200], "share_to_feed": "true",
                                   "access_token": token}
         if mode == "url":
-            public = os.environ.get("CLIPFORGE_PUBLIC_URL", "").rstrip("/")
+            public = os.environ.get("CHOONCLIPS_PUBLIC_URL", "").rstrip("/")
             if not public:
-                raise PublishError("INSTAGRAM_UPLOAD_MODE=url needs CLIPFORGE_PUBLIC_URL")
+                raise PublishError("INSTAGRAM_UPLOAD_MODE=url needs CHOONCLIPS_PUBLIC_URL")
             params["video_url"] = f"{public}/media/clip/{clip['id']}.mp4"
         else:
             params["upload_type"] = "resumable"
